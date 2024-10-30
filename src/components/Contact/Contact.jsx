@@ -3,7 +3,7 @@ import { GrUserManager } from "react-icons/gr";
 import { FaPhone } from "react-icons/fa6";
 import { iconSize } from '../utils/iconSize';
 
-export default function Contact({name, number, onDeleteContact, id}){
+export default function Contact({name, number, id, onDeleteContact}){
 	return (
 		<>
                   <div>
