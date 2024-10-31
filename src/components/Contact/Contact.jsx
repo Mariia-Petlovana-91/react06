@@ -2,8 +2,17 @@ import css from '../Contact/Contact.module.css';
 import { GrUserManager } from "react-icons/gr";
 import { FaPhone } from "react-icons/fa6";
 import { iconSize } from '../utils/iconSize';
+import { deleteContacts } from '../../redux/contactsSlice';
+import { useDispatch } from 'react-redux';
 
-export default function Contact({name, number, id, onDeleteContact}){
+export default function Contact({ name, number, id, onDeleteContact }) {
+	const dispatch = useDispatch(); 
+
+	function onDeleteContact(contactId) {
+		const action = deleteContacts(contactId);
+		dispatch(action);
+	}
+	
 	return (
 		<>
                   <div>
