@@ -21,7 +21,7 @@ export default function Contact({ name = "Ім'я відсутнє", number = "�
 				</p>
 			</div>
 			<button className='btn'
-				tupe="button"
+				type='button'
 				onClick={() => dispatch(deleteContacts(id))}>Delete
 			</button>
 		</>
