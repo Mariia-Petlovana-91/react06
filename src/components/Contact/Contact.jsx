@@ -5,13 +5,8 @@ import { iconSize } from '../utils/iconSize';
 import { deleteContacts } from '../../redux/contactsSlice';
 import { useDispatch } from 'react-redux';
 
-export default function Contact({ name, number, id, onDeleteContact }) {
+export default function Contact({ name = "Ім'я відсутнє", number = "Номер відсутній", id}) {
 	const dispatch = useDispatch(); 
-
-	function onDeleteContact(contactId) {
-		const action = deleteContacts(contactId);
-		dispatch(action);
-	}
 	
 	return (
 		<>
@@ -27,7 +22,7 @@ export default function Contact({ name, number, id, onDeleteContact }) {
 			</div>
 			<button className='btn'
 				tupe="button"
-				onClick={()=>onDeleteContact(id)}>Delete
+				onClick={() => dispatch(deleteContacts(id))}>Delete
 			</button>
 		</>
 	)
